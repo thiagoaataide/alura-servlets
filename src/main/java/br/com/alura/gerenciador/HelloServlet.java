@@ -1,4 +1,4 @@
-package br.com.alura.gerenciador.gerenciador;
+package br.com.alura.gerenciador;
 
 import java.io.*;
 import javax.servlet.http.*;
