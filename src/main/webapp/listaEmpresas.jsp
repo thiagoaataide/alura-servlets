@@ -1,5 +1,4 @@
-<%@ page import="java.util.List" %>
-<%@ page import="br.com.alura.gerenciador.servlet.Empresa" %><%--
+<%--
   Created by IntelliJ IDEA.
   User: SANKHYA
   Date: 04/11/2021
@@ -8,22 +7,24 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ page import="java.util.List, br.com.alura.gerenciador.servlet.Empresa" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <html>
 <head>
     <title>Empresas Cadastradas</title>
 </head>
 <body>
-<ul>
-    <%
-        List<Empresa> lista = (List<Empresa>) request.getAttribute("empresas");
-        for (Empresa empresa : lista) {
-    %>
-    <li><%=empresa.getNome()%>
-    </li>
-    <%
-        }
-    %>
-</ul>
+
+    Lista de empresas: <br />
+
+    <ul>
+        <c:forEach items="${empresas}" var="empresa">
+<%--            Ambas Expression Languages tem o mesmo resutado.--%>
+<%--            <%=empresa.getNome()%>--%>
+            <li>${empresa.nome} - <fmt:formatDate value="${empresa.dataAbertura}" pattern="dd/MM/yyyy" /> </li>
+        </c:forEach>
+
+    </ul>
 
 </body>
 </html>
