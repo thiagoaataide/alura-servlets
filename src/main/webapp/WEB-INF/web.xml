@@ -3,4 +3,18 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
          version="4.0">
+    <display-name>gerenciador</display-name>
+    <welcome-file-list>
+        <welcome-file>bem-vindo.html</welcome-file>
+    </welcome-file-list>
+
+    <servlet>
+        <servlet-name>QQCoisa</servlet-name> <!-- Serve para mapear a classe com a configuração do  servlet no servlet-mapping -->
+        <servlet-class>br.com.alura.gerenciador.servlet.OiMundoServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>QQCoisa</servlet-name>
+        <url-pattern>/ola</url-pattern>
+    </servlet-mapping>
 </web-app>
