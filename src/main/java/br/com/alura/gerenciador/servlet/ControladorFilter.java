@@ -12,6 +12,16 @@ import java.io.IOException;
 public class ControladorFilter implements Filter {
 
     @Override
+    public void init(FilterConfig filterConfig) throws ServletException {
+
+    }
+
+    @Override
+    public void destroy() {
+
+    }
+
+    @Override
     public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain chain) throws ServletException, IOException {
 
         HttpServletRequest request = (HttpServletRequest) servletRequest;
